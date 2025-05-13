@@ -66,7 +66,7 @@ export default function LandingPage() {
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <div className="flex items-center">
                 <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                <span>June 15-17, 2025</span>
+                <span>July 24-27, 2025</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="mr-2 h-5 w-5 text-[#FFD700]" />
@@ -87,30 +87,26 @@ export default function LandingPage() {
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About ETHNILE</h2>
             <div className="mt-2 h-1 w-20 bg-[#4ECDC4] mx-auto"></div>
             <p className="mt-6 text-lg text-gray-600">
-              ETHNILE is East Africa's premier cryptocurrency and blockchain technology event, bringing together
-              industry leaders, innovators, investors, and enthusiasts from across the globe.
+              EthNile is an in-person Web3 conference and hackathon hosted at the source of the River Nile, featuring pop-up pitch days, intensive bootcamps, and guided campus and city tours.
             </p>
           </div>
           <div className="mt-16 grid gap-8 md:grid-cols-3">
             <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Learn</h3>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">Decentralising Sub-Saharan Africa</h3>
               <p className="text-gray-600">
-                Gain insights from industry experts through keynotes, panel discussions, and workshops focused on
-                blockchain technology and cryptocurrency.
+                EthNile 2025 unites developers, educators, and innovators to explore decentralised solutions for real-world challenges. Through workshops, mentorship, and hybrid hackathon experiences, we empower the next generation of African blockchain builders.
               </p>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Connect</h3>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">Code of the Continent</h3>
               <p className="text-gray-600">
-                Network with founders, developers, investors, and enthusiasts from East Africa and beyond to build
-                valuable relationships.
+                Can Africa fully embrace decentralization? How will regulation shape or support this future? What role will tokenization play in real-world use cases? Join the builders, thinkers, and pioneers leading this conversation.
               </p>
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-3 text-xl font-bold text-gray-900">Innovate</h3>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">Global Collaboration</h3>
               <p className="text-gray-600">
-                Discover the latest blockchain innovations and explore opportunities for collaboration and investment in
-                the African crypto ecosystem.
+                Hosted in Jinja, Uganda, at the source of the Nile, we foster global collaboration through intensive bootcamps, pitch days, and guided tours, creating a unique environment for innovation and networking.
               </p>
             </div>
           </div>
