@@ -34,11 +34,41 @@ const speakers = [
     position: 'CTO, Tech Company',
   }]
   
-
-
-
-
-
+// Update the sponsors constant to use the speakers.png placeholder
+const sponsors = [
+  {
+    name: 'Ethereum Foundation',
+    logo: '/gallery/speakers.jpg',
+  },
+  {
+    name: 'Polygon',
+    logo: '/gallery/speakers.jpg',
+  },
+  {
+    name: 'Chainlink',
+    logo: '/gallery/speakers.jpg',
+  },
+  {
+    name: 'Filecoin',
+    logo: '/gallery/speakers.jpg',
+  },
+  {
+    name: 'Arbitrum',
+    logo: '/gallery/speakers.jpg',
+  },
+  {
+    name: 'Optimism',
+    logo: '/gallery/speakers.jpg',
+  },
+  {
+    name: 'Avalanche',
+    logo: '/gallery/speakers.jpg',
+  },
+  {
+    name: 'Solana',
+    logo: '/gallery/speakers.jpg',
+  }
+];
 
 export default function LandingPage() {
   return (
@@ -151,6 +181,54 @@ export default function LandingPage() {
           <div className="mt-12 text-center">
             <Button variant="outline" className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4]/10">
               View All Speakers
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors Section */}
+      <section className="bg-gray-50 py-16 lg:py-24" id="sponsors">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Sponsors</h2>
+            <div className="mt-2 h-1 w-20 bg-[#4ECDC4] mx-auto"></div>
+            <p className="mt-6 text-lg text-gray-600">
+              Proudly supported by leading blockchain organizations
+            </p>
+          </div>
+
+          <div className="mt-16 relative overflow-hidden">
+            <div className="flex animate-scroll">
+              {/* First set of logos */}
+              {sponsors.map((sponsor, index) => (
+                <div key={index} className="flex-shrink-0 mx-8">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    width={120}
+                    height={48}
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {sponsors.map((sponsor, index) => (
+                <div key={`dup-${index}`} className="flex-shrink-0 mx-8">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    width={120}
+                    height={48}
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button variant="outline" className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4]/10">
+              Become a Sponsor
             </Button>
           </div>
         </div>
