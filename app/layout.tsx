@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/gallery/changed.png",
+    icon: "/favicon.ico",
   },
   title: "ETHNILE - East Africa's Premier Crypto Conference",
   description: "Join the largest blockchain and cryptocurrency event in East Africa",

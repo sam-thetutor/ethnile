@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, ChevronRight, Mail, Phone } from "lucide-react"
 import { RegisterButton } from "./components/RegisterButton"
+import { CountdownTimer } from "./components/CountdownTimer"
 
 // Add this constant at the top of the file, after imports
 const galleryImages = [
@@ -104,7 +105,9 @@ export default function LandingPage() {
                 <span>Kampala, Uganda</span>
               </div>
             </div>
-            <div className="mt-10">
+            <CountdownTimer />
+
+            <div className="">
               <RegisterButton />
             </div>
           </div>
