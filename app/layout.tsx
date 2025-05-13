@@ -7,6 +7,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/gallery/changed.png",
+  },
   title: "ETHNILE - East Africa's Premier Crypto Conference",
   description: "Join the largest blockchain and cryptocurrency event in East Africa",
     generator: 'v0.dev'
