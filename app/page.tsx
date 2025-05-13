@@ -3,15 +3,51 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, ChevronRight, Mail, Phone } from "lucide-react"
 
+// Add this constant at the top of the file, after imports
+const galleryImages = [
+  '/gallery/about-bg.jpg',
+  '/gallery/eth2.jpg',
+  '/gallery/imageB.jpeg',
+  '/gallery/ethN.jpg'
+];
+
+const speakers = [
+  {
+    name: 'John Doe',
+    image: '/gallery/speakers.jpg',
+    position: 'CEO, Tech Company',
+  },
+  {
+    name: 'Jane Smith',
+    image: '/gallery/speakers.jpg',
+    position: 'CTO, Tech Company',
+  },
+  {
+    name: 'John Doe',
+    image: '/gallery/speakers.jpg',
+    position: 'CEO, Tech Company',
+  },
+  {
+    name: 'Jane Smith',
+    image: '/gallery/speakers.jpg',
+    position: 'CTO, Tech Company',
+  }]
+  
+
+
+
+
+
+
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section with Video Background */}
-      <section className="relative bg-black text-white">
+      <section className="relative bg-black text-white h-screen">
         {/* Video Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video autoPlay muted loop className="h-full w-full object-cover">
-            <source src="/lake-victoria.mp4" type="video/mp4" />
+            <source src="https://v3.cdnpk.net/videvo_files/video/free/2012-11/large_preview/MVI_1482.mp4?token=exp=1746023397~acl=/*~hmac=39f318479c196b10dc10ffd1450ab16a3ec4a49d8346d64c06b8a43f2ad784fa" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -20,7 +56,7 @@ export default function LandingPage() {
         <div className="container relative z-10 mx-auto px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
           <div className="mx-auto max-w-4xl text-center">
             <div className="mx-auto mb-8 w-32 sm:w-40">
-              <Image src="/ethnile-logo.png" alt="ETHNILE Logo" width={160} height={160} className="w-full" />
+              <Image src="/gallery/changed.png" alt="ETHNILE Logo" width={160} height={160} className="w-full" />
             </div>
             <h1 className="mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
               <span className="block text-[#4ECDC4]">ETHNILE</span>
@@ -97,18 +133,18 @@ export default function LandingPage() {
             </p>
           </div>
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {[1, 2, 3, 4].map((speaker) => (
-              <div key={speaker} className="flex flex-col items-center">
+            {speakers.map((speaker, index) => (
+              <div key={index} className="flex flex-col items-center">
                 <div className="relative h-48 w-48 overflow-hidden rounded-full">
                   <Image
-                    src={`/placeholder.svg?height=200&width=200&text=Speaker ${speaker}`}
-                    alt={`Speaker ${speaker}`}
+                    src={speaker.image}
+                    alt={`Speaker ${speaker.name}`}
                     fill
                     className="object-cover"
                   />
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-gray-900">Speaker Name</h3>
-                <p className="text-gray-600">Position, Company</p>
+                <h3 className="mt-6 text-xl font-bold text-gray-900">{speaker.name}</h3>
+                <p className="text-gray-600">{speaker.position}</p>
                 <p className="mt-2 text-sm text-gray-500">
                   Expert in blockchain technology with over 10 years of experience in the industry.
                 </p>
@@ -132,13 +168,14 @@ export default function LandingPage() {
             <p className="mt-6 text-lg text-gray-600">Highlights from previous ETHNILE events</p>
           </div>
           <div className="mt-16 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((image) => (
-              <div key={image} className="relative aspect-square overflow-hidden rounded-lg">
+            {galleryImages.map((image, index) => (
+              <div key={index} className="relative aspect-square overflow-hidden rounded-lg">
                 <Image
-                  src={`/placeholder.svg?height=300&width=300&text=Image ${image}`}
-                  alt={`Gallery image ${image}`}
+                  src={image}
+                  alt={`ETHNILE event gallery image ${index + 1}`}
                   fill
                   className="object-cover transition-transform duration-300 hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
             ))}
