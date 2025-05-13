@@ -177,31 +177,49 @@ export default function LandingPage() {
         </div>
       </section>
 
- {/* Gallery Section */}
- <section className="bg-white py-16 lg:py-24" id="gallery">
+      {/* Gallery Section */}
+      <section className="bg-white py-16 lg:py-24" id="gallery">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Event Gallery</h2>
             <div className="mt-2 h-1 w-20 bg-[#4ECDC4] mx-auto"></div>
             <p className="mt-6 text-lg text-gray-600">Highlights from previous ETHNILE events</p>
           </div>
-          <div className="mt-16 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="relative aspect-square overflow-hidden rounded-lg">
-                <Image
-                  src={image}
-                  alt={`ETHNILE event gallery image ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-300 hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-            ))}
+
+          <div className="mt-16 relative overflow-hidden">
+            <div className="flex animate-scroll">
+              {/* First set of images */}
+              {galleryImages.map((image, index) => (
+                <div key={index} className="flex-shrink-0 mx-4">
+                  <div className="relative h-64 w-64 overflow-hidden rounded-lg">
+                    <Image
+                      src={image}
+                      alt={`ETHNILE event gallery image ${index + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {galleryImages.map((image, index) => (
+                <div key={`dup-${index}`} className="flex-shrink-0 mx-4">
+                  <div className="relative h-64 w-64 overflow-hidden rounded-lg">
+                    <Image
+                      src={image}
+                      alt={`ETHNILE event gallery image ${index + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
-
-      
 
       {/* Speakers Section */}
       <section className="bg-gray-50 py-16 lg:py-24" id="speakers">
