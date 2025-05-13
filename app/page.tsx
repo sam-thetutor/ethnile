@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, ChevronRight, Mail, Phone } from "lucide-react"
+import { RegisterButton } from "./components/RegisterButton"
 
 // Add this constant at the top of the file, after imports
 const galleryImages = [
@@ -74,7 +75,7 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="mt-10">
-              <Button className="bg-[#4ECDC4] text-black hover:bg-[#3DBDB4]">Register Now</Button>
+              <RegisterButton />
             </div>
           </div>
         </div>
