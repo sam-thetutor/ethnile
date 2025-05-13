@@ -141,18 +141,41 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
-          <div className="mt-12 text-center">
-            <Link href="#speakers" className="inline-flex items-center text-[#4ECDC4] hover:text-[#3DBDB4]">
-              Meet our speakers <ChevronRight className="ml-1 h-4 w-4" />
-            </Link>
+          
+        </div>
+      </section>
+
+ {/* Gallery Section */}
+ <section className="bg-white py-16 lg:py-24" id="gallery">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Event Gallery</h2>
+            <div className="mt-2 h-1 w-20 bg-[#4ECDC4] mx-auto"></div>
+            <p className="mt-6 text-lg text-gray-600">Highlights from previous ETHNILE events</p>
+          </div>
+          <div className="mt-16 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {galleryImages.map((image, index) => (
+              <div key={index} className="relative aspect-square overflow-hidden rounded-lg">
+                <Image
+                  src={image}
+                  alt={`ETHNILE event gallery image ${index + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
+      
 
       {/* Speakers Section */}
       <section className="bg-gray-50 py-16 lg:py-24" id="speakers">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
+            
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Featured Speakers</h2>
             <div className="mt-2 h-1 w-20 bg-[#4ECDC4] mx-auto"></div>
             <p className="mt-6 text-lg text-gray-600">
@@ -234,29 +257,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="bg-white py-16 lg:py-24" id="gallery">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Event Gallery</h2>
-            <div className="mt-2 h-1 w-20 bg-[#4ECDC4] mx-auto"></div>
-            <p className="mt-6 text-lg text-gray-600">Highlights from previous ETHNILE events</p>
-          </div>
-          <div className="mt-16 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="relative aspect-square overflow-hidden rounded-lg">
-                <Image
-                  src={image}
-                  alt={`ETHNILE event gallery image ${index + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-300 hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
