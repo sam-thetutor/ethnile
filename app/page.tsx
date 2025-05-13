@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, ChevronRight, Mail, Phone } from "lucide-react"
 import { RegisterButton } from "./components/RegisterButton"
 import { CountdownTimer } from "./components/CountdownTimer"
+import { FAQItem } from "./components/FAQItem"
 
 // Add this constant at the top of the file, after imports
 const galleryImages = [
@@ -68,6 +69,34 @@ const sponsors = [
   {
     name: 'Solana',
     logo: '/gallery/speakers.jpg',
+  }
+];
+
+// Add this constant at the top with other constants
+const faqs = [
+  {
+    question: "What is ETHNILE?",
+    answer: "ETHNILE is an in-person Web3 conference and hackathon hosted at the source of the River Nile in Jinja, Uganda. It brings together developers, educators, and innovators to explore decentralized solutions for real-world challenges."
+  },
+  {
+    question: "When and where is ETHNILE 2025?",
+    answer: "ETHNILE 2025 will take place from July 24-27, 2025, in Jinja, Uganda, at the source of the River Nile."
+  },
+  {
+    question: "Who should attend ETHNILE?",
+    answer: "ETHNILE is designed for blockchain developers, entrepreneurs, investors, students, and anyone interested in Web3 technology and its potential impact on Africa's future."
+  },
+  {
+    question: "What can I expect at ETHNILE?",
+    answer: "Attendees can expect intensive bootcamps, pop-up pitch days, guided campus and city tours, networking opportunities, and the chance to collaborate on innovative blockchain solutions."
+  },
+  {
+    question: "How can I participate in the hackathon?",
+    answer: "Registration for the hackathon will open closer to the event. Participants can form teams and work on projects that address real-world challenges using blockchain technology."
+  },
+  {
+    question: "Are there any travel arrangements or accommodations?",
+    answer: "While we don't provide direct travel arrangements, we'll share recommended accommodations and travel tips for international and local attendees closer to the event."
   }
 ];
 
@@ -256,6 +285,38 @@ export default function LandingPage() {
             <Button variant="outline" className="border-[#4ECDC4] text-[#4ECDC4] hover:bg-[#4ECDC4]/10">
               Become a Sponsor
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-white py-16 lg:py-24" id="faq">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Frequently Asked Questions</h2>
+            <div className="mt-2 h-1 w-20 bg-[#4ECDC4] mx-auto"></div>
+            <p className="mt-6 text-lg text-gray-600">
+              Find answers to common questions about ETHNILE 2025
+            </p>
+          </div>
+
+          <div className="mx-auto mt-16 max-w-3xl">
+            {faqs.map((faq, index) => (
+              <FAQItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-gray-600">
+              Still have questions?{' '}
+              <a href="mailto:info@ethnile.com" className="text-[#4ECDC4] hover:text-[#3DBDB4]">
+                Contact us
+              </a>
+            </p>
           </div>
         </div>
       </section>
